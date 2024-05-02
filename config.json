@@ -1,26 +1,26 @@
 [
-  {
-    "checkUrl": "https://www.miaolianyun.com/api/v1/guest/comm/config",
-    "jumpUrl": "https://www.miaolianyun.com/#/"
-  },
-  {
-    "checkUrl": "https://www.miaolianyun.net/api/v1/guest/comm/config",
-    "jumpUrl": "https://www.miaolianyun.net/#/"
-  },
-  {
-    "checkUrl": "https://www.miaolianyun.lol/api/v1/guest/comm/config",
-    "jumpUrl": "https://www.miaolianyun.lol/#/"
-  },
-  {
-    "checkUrl": "https://www.miaolianyun.rest/api/v1/guest/comm/config",
-    "jumpUrl": "https://www.miaolianyun.rest/#/"
-  },
-  {
-    "checkUrl": "https://www.miaolianyun.cc/api/v1/guest/comm/config",
-    "jumpUrl": "https://www.miaolianyun.cc/#/"
-  },
-  {
-    "checkUrl": "https://www.miaolianyun.top/api/v1/guest/comm/config",
-    "jumpUrl": "https://www.miaolianyun.top/#/"
-  }
-]
+    {
+      "checkUrl": "https://www.miaolianyun.com/api/v1/guest/comm/config",
+      "jumpUrl": "https://www.miaolianyun.com/"
+    },
+    {
+      "checkUrl": "https://www.miaolianyun.net/api/v1/guest/comm/config",
+      "jumpUrl": "https://www.miaolianyun.net/"
+    },
+    {
+      "checkUrl": "https://www.miaolianyun.lol/api/v1/guest/comm/config",
+      "jumpUrl": "https://www.miaolianyun.lol/"
+    },
+    {
+      "checkUrl": "https://www.miaolianyun.rest/api/v1/guest/comm/config",
+      "jumpUrl": "https://www.miaolianyun.rest/"
+    },
+    {
+      "checkUrl": "https://www.miaolianyun.cc/api/v1/guest/comm/config",
+      "jumpUrl": "https://www.miaolianyun.cc/"
+    },
+    {
+      "checkUrl": "https://www.miaolianyun.top/api/v1/guest/comm/config",
+      "jumpUrl": "https://www.miaolianyun.top/"
+    }
+  ]
