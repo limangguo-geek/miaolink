@@ -11,14 +11,14 @@ window.onload = function() {
             const requests = websites.map(website => testWebsiteSpeed(website.checkUrl));
 
             // 并发测试每个网站的响应时间
-            Promise.all(requests)
-                .then(speeds => {
-                    // 找到最快的网站并进行跳转
+            Promise.allSettled(requests)
+                .then(results => {
+                    const speeds = results.map(result => result.status === 'fulfilled' ? result.value : Number.MAX_SAFE_INTEGER);
                     const fastestIndex = speeds.indexOf(Math.min(...speeds));
                     const jumpUrl = websites[fastestIndex].jumpUrl;
 
                     // 将当前页面的 URL 参数附加到跳转的 URL 上
-                    const finalUrl = jumpUrl + (queryString ? '?' + queryString : '');
+                    const finalUrl = `${jumpUrl}${queryString ? '?' + queryString : ''}`;
                     window.location.href = finalUrl; // 跳转到最快的网站
                 })
                 .catch(error => console.error('Error testing website speeds:', error));
@@ -30,7 +30,7 @@ window.onload = function() {
         return new Promise((resolve) => {
             const startTime = performance.now();
             fetch(url, { method: 'HEAD' }) // 使用 HEAD 请求，只获取响应头而不传输整个响应内容，加快测速
-                .then(response => {
+                .then(() => {
                     const endTime = performance.now();
                     const speed = endTime - startTime; // 计算响应时间
                     resolve(speed);
