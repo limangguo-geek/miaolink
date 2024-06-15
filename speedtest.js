@@ -1,5 +1,3 @@
-// speedtest.js
-
 window.onload = function() {
     // 获取当前页面的 URL 参数
     const queryParams = new URLSearchParams(window.location.search);
@@ -29,7 +27,7 @@ window.onload = function() {
 
     // 测试单个网站的速度
     function testWebsiteSpeed(url) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const startTime = performance.now();
             fetch(url, { method: 'HEAD' }) // 使用 HEAD 请求，只获取响应头而不传输整个响应内容，加快测速
                 .then(response => {
@@ -37,7 +35,10 @@ window.onload = function() {
                     const speed = endTime - startTime; // 计算响应时间
                     resolve(speed);
                 })
-                .catch(error => reject(error));
+                .catch(error => {
+                    console.error(`Error testing website speed for ${url}:`, error);
+                    resolve(Number.MAX_SAFE_INTEGER); // 将失败的请求记录为非常高的响应时间
+                });
         });
     }
 };
